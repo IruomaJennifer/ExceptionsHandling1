@@ -5,9 +5,10 @@ using ExceptionHandlingAssignment1;
 
 Worker worker = new Worker(30000m);
 string[] hours = File.ReadAllLines(@"C:\Users\Asus\Desktop\CypherCresent Software Academy\Assignments\ExceptionHandlingAssignment1\HoursWorked.txt");
-decimal[] payRateForAWeek = new decimal[worker.HoursWorkedPerDay.Length];
+decimal[] payRateForAWeek = new decimal[7];
 try
 {
+    
     for (int i = 0; i < hours.Length; i++)
     {
         worker.HoursWorkedPerDay[i] = int.Parse(hours[i]);
