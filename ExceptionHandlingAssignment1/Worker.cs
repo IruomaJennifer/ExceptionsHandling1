@@ -11,6 +11,8 @@ namespace ExceptionHandlingAssignment1
         public Worker(decimal wage)
         {
             Wage= wage;
+            HoursWorkedPerDay = new int[7];
+
         }
         public string Name { get; set; }
         public decimal Wage { get; set; }

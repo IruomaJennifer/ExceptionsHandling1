@@ -4,11 +4,11 @@ using ExceptionHandlingAssignment1;
 
 
 Worker worker = new Worker(30000m);
-string[] hours = File.ReadAllLines(@"C:\Users\Asus\Desktop\CypherCresent Software Academy\Assignments\ExceptionHandlingAssignment1\HoursWorked.txt");
+
 decimal[] payRateForAWeek = new decimal[7];
 try
 {
-    
+    string[] hours = File.ReadAllLines(@"C:\Users\Asus\Desktop\CypherCresent Software Academy\Assignments\ExceptionHandlingAssignment1\HoursWorked.txt");
     for (int i = 0; i < hours.Length; i++)
     {
         worker.HoursWorkedPerDay[i] = int.Parse(hours[i]);
@@ -18,8 +18,10 @@ try
     {
         payRateForAWeek[i] = worker.Wage / worker.HoursWorkedPerDay[i];
     }
+
     int index = 0;
-    double value = GetAveragePayRate(index)/payRateForAWeek.Length;
+    double value = GetAveragePayRate(index)/7;
+    Console.WriteLine($"{worker.Name}'s avearage pay rate is {value}");
 
     double GetAveragePayRate(int i)
     {
